@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-source "$BASH_OPT/b_unit/b_unit.sh"
-source "$BASH_OPT/language/global.sh"
+source "$BASH_LIB/b_unit/b_unit.sh"
+source "$BASH_LIB/language/global.sh"
 
 function allias() {
     assertEquals='bUnit.assertEquals'
