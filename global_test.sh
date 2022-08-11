@@ -31,5 +31,25 @@ classNamePattern="^[A-Z][a-zA-Z0-9]*_[a-zA-Z0-9]+"
     $assertEquals "$expected" "$actual"
 }
 
+@test.like.matchInText() {
+    local source="str 1 str 2 # target: str 3 str 4"
+    local actual
+    local expected="0"
+
+    $(like "$source" " # target: ")
+    actual="$?"
+    $assertEquals "$expected" "$actual"
+}
+
+@test.like.failedMatchInText() {
+    local source="str 1 str 2 # target: str 3 str 4"
+    local actual
+    local expected="1"
+
+    $(like "$source" " # tardget: ")
+    actual="$?"
+    $assertEquals "$expected" "$actual"
+}
+
 allias
 bUnit.runTestGroups
