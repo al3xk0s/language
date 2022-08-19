@@ -11,7 +11,7 @@ function _containsImport() {
     return 1
 }
 
-function @import() {
+function import() {
     local path="$1"
     local oldPath="$(pwd)"
 

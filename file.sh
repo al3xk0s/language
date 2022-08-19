@@ -11,12 +11,16 @@ function file.readLines() {
     done < "$file"
 }
 
-# file.writeLines "${lines[@]}"
-# file.writeLines "first line" "sec line"
+# file.writeLines "path/to/file" "${lines[@]}"
+# file.writeLines "path/to/file" "first line" "sec line"
 
 function file.writeLines() {
+    local file="$1"
+
+    [[ ! -f "$file" ]] && echo > ""
+
     local item
-    for item in "${@}"; do
+    for item in "${@:1}"; do
         echo "$item"
     done
 }
