@@ -11,7 +11,7 @@ function allias() {
 
 classNamePattern="^[A-Z][a-zA-Z0-9]*_[a-zA-Z0-9]+"
 
-@test.like.match() {
+test.like.match() {
     local source="DataClass_ksaldkl13409"
     local actual
     local expected="0"
@@ -21,7 +21,7 @@ classNamePattern="^[A-Z][a-zA-Z0-9]*_[a-zA-Z0-9]+"
     $assertEquals "$expected" "$actual"
 }
 
-@test.like.doesntMatchLowerInStart() {
+test.like.doesntMatchLowerInStart() {
     local source="dataClass_ksaldkl13409"
     local actual
     local expected="1"
@@ -31,7 +31,7 @@ classNamePattern="^[A-Z][a-zA-Z0-9]*_[a-zA-Z0-9]+"
     $assertEquals "$expected" "$actual"
 }
 
-@test.like.matchInText() {
+test.like.matchInText() {
     local source="str 1 str 2 # target: str 3 str 4"
     local actual
     local expected="0"
@@ -41,7 +41,7 @@ classNamePattern="^[A-Z][a-zA-Z0-9]*_[a-zA-Z0-9]+"
     $assertEquals "$expected" "$actual"
 }
 
-@test.like.failedMatchInText() {
+test.like.failedMatchInText() {
     local source="str 1 str 2 # target: str 3 str 4"
     local actual
     local expected="1"
